@@ -9,7 +9,7 @@ public class ConcurrentHashMapThread extends Thread {
 
   @Override
   public void run() {
-    // Thread.sleeop(1000);
+    // Thread.sleep(1000);
     map.remove(101);
   }
 

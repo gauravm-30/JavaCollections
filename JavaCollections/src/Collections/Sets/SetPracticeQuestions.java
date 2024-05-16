@@ -21,6 +21,7 @@ public class SetPracticeQuestions {
 
     integerSet.stream().forEach(System.out::println);
     Set<Student> students = new HashSet<>();
+    // Now it will add only two elements as we have overriden the equals and hashcode method
     students.add(new Student(101, "Gaurav"));
     students.add(new Student(101, "Gaurav"));
     students.add(new Student(102, "GauravM"));

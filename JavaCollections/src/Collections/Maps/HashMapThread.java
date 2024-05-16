@@ -5,6 +5,8 @@ import java.util.Map;
 
 // Working on Hashmap with concurrent threads
 public class HashMapThread extends Thread {
+
+  // Shared resource
   static Map<Integer, String> map = new HashMap<>();
 
   @Override
@@ -18,6 +20,7 @@ public class HashMapThread extends Thread {
     }
   }
 
+  // this is the main thread which always runs first
   public static void main(String[] args) throws InterruptedException {
     // first we are inserting 3 key value pairs
     map.put(101, "GauravM1");
