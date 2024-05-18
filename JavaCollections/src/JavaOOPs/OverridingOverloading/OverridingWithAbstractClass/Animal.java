@@ -1,8 +1,10 @@
-package JavaOOPs.OverridingOverloading;
+package JavaOOPs.OverridingOverloading.OverridingWithAbstractClass;
 
-public class Animal {
+public abstract class Animal {
 
-  int numberOfEyes;
+  // Since if we make the field private then we can't access it with Dog reference variable. Even
+  // though we are able to set this variable value using constructor
+  private int numberOfEyes;
   String name;
 
   public Animal() {
@@ -14,6 +16,8 @@ public class Animal {
     this.numberOfEyes = numberOfEyes;
     this.name = name;
   }
+
+  public abstract void danger();
 
   public void speak() {
     System.out.println("Generic Animal Speaking");

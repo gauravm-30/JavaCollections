@@ -1,18 +1,27 @@
-package JavaOOPs.OverridingOverloading;
+package JavaOOPs.OverridingOverloading.OverridingStaticMethodAndVariables;
 
 public class Dog extends Animal {
   int numberOfLegs;
+  static int numberOfEyes = 25;
+  static int numberOfEars = 2;
 
+  // No use of this because it will not call super class constructor as super class is interface
+  // we can't assign any value to super class variable as they are by default static and final
+  // we can just access them
   public Dog(int numberOfEyes, String name, int numberOfLegs) {
+    super(name);
     // Calling super class constructor
-    super(numberOfEyes, name);
     this.numberOfLegs = numberOfLegs;
     System.out.println("creating the dog using super class and subclass paramters");
   }
 
+  // Below method is equivalent to
+  /*
+   * */
   public Dog(int numberOfLegs) {
     // Creating Dog with only subclass variables
     this.numberOfLegs = numberOfLegs;
+    System.out.println("Creating Dog with only subclass parameter");
   }
 
   // Below method is equivalent to
@@ -20,11 +29,18 @@ public class Dog extends Animal {
    * public Dog(){
    * super() //inserted by compiler , constructor chaining i.e. when one constructor calls the another constructor
    * System.out.println("CreatingAnimalDog");
+   * }
    * */
   public Dog() {
     System.out.println("Creating Animal Dog");
   }
 
+  @Override
+  public void danger() {
+    System.out.println("Dogs are not danger animal");
+  }
+
+  @Override
   public void speak() {
     System.out.println("Dog Speaks");
   }
@@ -35,11 +51,39 @@ public class Dog extends Animal {
 
   public static void main(String[] args) {
     // parent reference with child object
-    Animal a1 = new Dog();
+    // It will the constructor of Animal and then of Dog(), constructor chaining
+    //    Animal a1 = new Dog();
     // Since we have taken Animal class reference(parent class reference) so only method and
     // variables present in Animal Class will be available
     // It will call the superclass method speak()
-    a1.speak();
+    //    a1.speak();
+    System.out.println(Animal.numberOfEyes);
+
+    // Overriding the Animal number of eyes
+    System.out.println(Dog.numberOfEyes);
+
+    // Have access to static variables present in super class
+    System.out.println(Dog.numberOfEars);
+
+    // *******************************************************
+    // Since the variables are static so it can be access via  interface not the object reference as
+    // they are on class level
+    // Like Animal.numberOfEyes
+
+    // It will the constructor of Animal and then of Dog(), constructor chaining
+    Animal a2 = new Dog(10);
+    a2.speak();
+
+    // Now creating only Dog class object with dog class reference
+    // Again as Dog as extended the Animal class, so it will call the super class constructor also
+    // i.e. constructor chaining
+    Dog d1 = new Dog();
+
+    Dog d2 = new Dog(10);
+
+    Dog d3 = new Dog(2, "Doberman", 10);
+    // Also dog can access all the public/protected method of its superclass
+
   }
 
   /*
