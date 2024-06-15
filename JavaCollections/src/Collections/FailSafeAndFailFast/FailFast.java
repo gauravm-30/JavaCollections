@@ -90,18 +90,6 @@ public class FailFast {
     // otherwise not through error means list is not modified
     //            strings.remove("s3");
     //        }
-
-    Map<Integer, String> stringMap = new HashMap<>();
-    stringMap.put(1, "Gaurav");
-    stringMap.put(2, "Gaurav1");
-    stringMap.put(3, "Gaurav2");
-
-    Iterator<Integer> iterator = stringMap.keySet().iterator();
-
-    while (iterator.hasNext()) {
-      System.out.println(iterator.next() + " : " + stringMap.get(iterator.next()));
-      stringMap.put(4, "Gaurav3");
-    }
   }
 
   public static void modifyMap() {

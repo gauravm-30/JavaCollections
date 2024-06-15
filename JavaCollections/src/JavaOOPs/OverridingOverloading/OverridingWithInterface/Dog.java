@@ -6,7 +6,7 @@ public class Dog implements Animal {
   // No use of this because it will not call super class constructor as super class is interface
   // we can't assign any value to super class variable as they are by default static and final
   // we can just access them
-  public Dog(int numberOfEyes, String name, int numberOfLegs) {
+  public Dog(int numberOfEyes, String name, int numberOfLegs, int numberOfEars, String Gender) {
     // Calling super class constructor
     this.numberOfLegs = numberOfLegs;
     System.out.println("creating the dog using super class and subclass paramters");
@@ -53,7 +53,8 @@ public class Dog implements Animal {
     Animal a1 = new Dog();
     // Since we have taken Animal class reference(parent class reference) so only method and
     // variables present in Animal Class will be available
-    // It will call the superclass method speak()
+    // But child class have overriden the method .So runtime polymorphism take place and Dog class
+    // speak() will be called
     a1.speak();
 
     // *******************************************************
@@ -71,7 +72,7 @@ public class Dog implements Animal {
     Dog d1 = new Dog();
     Dog d2 = new Dog(10);
 
-    Dog d3 = new Dog(2, "Doberman", 10);
+    Dog d3 = new Dog(2, "Doberman", 10, 5, "Male");
     // Also dog can access all the public/protected method of its superclass
 
   }

@@ -5,9 +5,6 @@ public class Dog extends Animal {
   static int numberOfEyes = 25;
   static int numberOfEars = 2;
 
-  // No use of this because it will not call super class constructor as super class is interface
-  // we can't assign any value to super class variable as they are by default static and final
-  // we can just access them
   public Dog(int numberOfEyes, String name, int numberOfLegs) {
     super(name);
     // Calling super class constructor

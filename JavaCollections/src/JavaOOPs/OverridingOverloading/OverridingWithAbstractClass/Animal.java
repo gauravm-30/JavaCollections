@@ -1,5 +1,11 @@
 package JavaOOPs.OverridingOverloading.OverridingWithAbstractClass;
 
+/*
+* An abstract class cannot be instantiated directly; it needs to be subclassed by another class.
+It can have both abstract methods (methods without bodies) and non-abstract methods (methods with implementations).
+Constructors are allowed in abstract classes.
+Abstract classes can have data members (variables) and methods.
+* */
 public abstract class Animal {
 
   // Since if we make the field private then we can't access it with Dog reference variable. Even
@@ -18,6 +24,19 @@ public abstract class Animal {
   }
 
   public abstract void danger();
+
+  // Static method can be overloaded
+  public static void printNumber() {
+    System.out.println("Hello Number 1");
+  }
+
+  public static void printNumber(String n1) {
+    System.out.println("Hello Number 2");
+  }
+
+  /*  public static int printNumber(String s2) {
+    return 1;
+  }*/
 
   public void speak() {
     System.out.println("Generic Animal Speaking");

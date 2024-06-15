@@ -1,10 +1,12 @@
 package Collections.Immutability;
 
 public class Student {
-  int id;
+  final int id;
   String name;
 
-  Student() {}
+  Student(int id) {
+      this.id = id;
+  }
 
   public Student(int id, String name) {
     this.id = id;

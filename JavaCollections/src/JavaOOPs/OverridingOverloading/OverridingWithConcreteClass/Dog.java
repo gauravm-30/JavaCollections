@@ -1,5 +1,14 @@
 package JavaOOPs.OverridingOverloading.OverridingWithConcreteClass;
 
+/*
+*   2. **Constructor Chaining**:
+     - In your case, the `Dog` class implicitly calls the parameterless constructor of the `Animal` class (since you haven't explicitly called any superclass constructor).
+     - The constructor chaining works as follows:
+       1. `Dog` constructor is invoked.
+       2. Before executing any code in the `Dog` constructor, the compiler inserts a call to the `Animal` constructor (parameterless) using `super()`.
+       3. The `Animal` constructor initializes any fields specific to the `Animal` class.
+       4. Then, the `Dog` constructor continues with its own initialization logic.
+* */
 public class Dog extends Animal {
   int numberOfLegs;
 
@@ -38,28 +47,40 @@ public class Dog extends Animal {
     System.out.println("Dog Speaks");
   }
 
+  public static void print() {
+    System.out.println("Static method : Dog");
+  }
+
+  public static void print(int b) {
+    System.out.println("Static method : Dog");
+  }
+
   public void loyalty() {
     System.out.println("Dogs are Loyal");
   }
 
   public static void main(String[] args) {
     // parent reference with child object
-    // It will the constructor of Animal and then of Dog(), constructor chaining
+    // It will call the constructor of Animal and then of Dog(), constructor chaining
     Animal a1 = new Dog();
     // Since we have taken Animal class reference(parent class reference) so only method and
-    // variables present in Animal Class will be available
+    // variables present in Animal Class will be available for the dog and if any method is
+    // overriden in Dog class.Then that overriden will be called.
     // Also child class has overriden the speak() method.So
     // It will call the subclass method speak()
     a1.speak();
 
     // It will the constructor of Animal and then of Dog(), constructor chaining
+
+    // ****Static method can be called using the object.
     Animal a2 = new Dog(10);
-    a2.speak();
+    a2.print();
 
     // Now creating only Dog class object with dog class reference
     // Again as Dog as extended the Animal class, so it will call the super class constructor also
     // i.e. constructor chaining
     Dog d1 = new Dog();
+
     Dog d2 = new Dog(10);
 
     Dog d3 = new Dog(2, "Doberman", 10);

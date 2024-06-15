@@ -25,7 +25,8 @@ public class SetPracticeQuestions {
     students.add(new Student(101, "Gaurav"));
     students.add(new Student(101, "Gaurav"));
     students.add(new Student(102, "GauravM"));
-
     System.out.println("students = " + students);
   }
+
+  public void SetImplementations() {}
 }

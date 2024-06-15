@@ -3,7 +3,9 @@ package JavaOOPs.DeepCopyShallowCopy;
 // Object cloning means copying of object
 // Two ways to copy the object
 // Shallow copy and Deep copy
-// Mostly used in Prototype Design Pattern
+
+// Shallow Copy means whatever is value of the fields of an object of  class, just  copy  them . So
+// in case if there any  reference variable exist in the class, then only reference is copied.
 
 public class ShallowCopy {
   public static void main(String[] args) {

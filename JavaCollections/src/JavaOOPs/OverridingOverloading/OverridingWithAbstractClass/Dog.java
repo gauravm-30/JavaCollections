@@ -34,6 +34,10 @@ public class Dog extends Animal {
     System.out.println("Creating Animal Dog");
   }
 
+  public static void printNumber() {
+    System.out.println("Hello Number 1");
+  }
+
   @Override
   public void danger() {
     System.out.println("Dogs are not danger animal");
@@ -52,8 +56,9 @@ public class Dog extends Animal {
     // It will the constructor of Animal and then of Dog(), constructor chaining
     Animal a1 = new Dog();
     // Since we have taken Animal class reference(parent class reference) so only method and
-    // variables present in Animal Class will be available
-    // It will call the superclass method speak()
+    // variables present in Animal Class will be available  for the dog and if any method is
+    // overriden in Dog class.Then that overriden will be called
+    // It will call the subclass 'Dog' method speak()  method overriding
     a1.speak();
 
     // It will the constructor of Animal and then of Dog(), constructor chaining

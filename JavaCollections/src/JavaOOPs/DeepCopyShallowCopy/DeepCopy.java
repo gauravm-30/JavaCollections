@@ -5,6 +5,10 @@ package JavaOOPs.DeepCopyShallowCopy;
 // Shallow copy and Deep copy
 // Mostly used in Prototype Design Pattern
 
+// whatever is value of the fields of an object of  class, just deep copy them . So
+// in case if there any  reference variable exist in the class, then instead of reference,
+// completely new object with same values are created.
+
 public class DeepCopy {
   public static void main(String[] args) {
     Course c1 = new Course(1, "Maths");

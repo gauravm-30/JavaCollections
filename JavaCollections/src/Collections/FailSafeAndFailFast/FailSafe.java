@@ -12,7 +12,7 @@ public class FailSafe {
     strings.add("s1");
     strings.add("s2");
     strings.add("s3");
-    //    modifyMap();
+    modifyMap();
 
     // We are creating the iterator on CopyOnWriteArrayList();
     // which will create the iterator over the copy of the CopyOnWriteArrayList();
